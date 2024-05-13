@@ -2,11 +2,8 @@ from osim.env import L2M2019Env
 import numpy as np
 import torch
 
-import wrapper
 from SAC import SAC
-import replay_buffer
-from replay_buffer import Data_Processor
-from replay_buffer import Transition
+
 
 #-----------------------------------------------------------------
 # arguments
