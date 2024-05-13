@@ -112,54 +112,5 @@ class Agent:
         #print(scaled_action[:5])
 
         return scaled_action
-#-----------------------------------------------------------------
 
-#env = L2M2019Env(difficulty=2, visualize=False)
-#env = wrapper.Wrapper_For_SkipFrame(env, 4)
-#env = wrapper.Vector_Observation(env)
-#obs = env.reset()
-
-#-----------------------------------------------------------------
-# training
-
-# agent = Agent()
-
-
-# obs = env.reset()
-
-# ep_len = 0
-
-# for j in range(5, 6):
-
-#     nets_history = torch.load('110062371_hw4_data copy {}'.format(j), map_location=torch.device('cpu'))
-#     #nets_history = torch.load('110062371_hw4_data', map_location=torch.device('cpu'))
-#     print('110062371_hw4_data copy {} loaded.'.format(j))
-#     q1_dict=nets_history['q1']
-#     q2_dict=nets_history['q2']
-#     policy_dict=nets_history['policy']
-
-#     agent.sac.load_nets(dict_q1= q1_dict, dict_q2=q2_dict, dict_policy=policy_dict)
-
-#     cumulative_reward = 0.
-#     cumulative_reward_2 = 0.
-
-#     for i in range(20):
-#         ep_len = 0
-#         obs = env.reset()
-#         while True:
-#             action = agent.act(obs)
-
-#             next_obs, reward, done, info = env.step(action)
-
-#             if ep_len < 1000:
-#                 cumulative_reward += reward
-#             cumulative_reward_2 += reward
-#             ep_len += 1
-
-#             obs = next_obs
-
-#             if done or ep_len >= 1000:
-#                 break
-#         print('reward: {}, eplen: {}'.format(cumulative_reward / (i + 1), ep_len))
-#     print(cumulative_reward / 20.)
 
