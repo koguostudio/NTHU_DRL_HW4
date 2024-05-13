@@ -107,9 +107,6 @@ class Agent:
         #action = action.squeeze().detach().cpu().__array__()
         scaled_action = self.action.copy()
         scaled_action = (scaled_action + 1.) / 2.
-        #scaled_action = np.clip(scaled_action, 0., 1.)
-
-        #print(scaled_action[:5])
 
         return scaled_action
 
