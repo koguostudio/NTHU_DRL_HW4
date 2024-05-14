@@ -79,6 +79,13 @@ class SAC:
         log_prob = torch.sum(log_prob, dim=1, keepdim=True)
 
         return action, log_prob
+    
+    def get_action(self, observation):
+        mean, log_std = self.policy_net(observation)
+
+        action = torch.tanh(mean)
+
+        return action
 
     def update_nets(self, action, current_observation, next_observation, reward, done):
         #-----------------------------------------------------------------------------------

@@ -99,7 +99,7 @@ class Agent:
         observation = torch.tensor(observation, device=self.device, dtype=torch.float).unsqueeze(0)
 
         if self.counter % 4 == 0:
-            self.action, _ = self.sac.get_action_and_log_prob(observation=observation)
+            self.action = self.sac.get_action(observation=observation)
             self.action = self.action.squeeze().detach().cpu().__array__()
             #print(self.counter)
         self.counter += 1
